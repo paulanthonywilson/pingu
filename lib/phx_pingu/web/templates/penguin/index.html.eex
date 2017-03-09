@@ -1,0 +1,30 @@
+<h2>Listing Penguins</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Noot noot</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for penguin <- @penguins do %>
+    <tr>
+      <td><%= penguin.name %></td>
+      <td><%= penguin.species %></td>
+      <td><%= penguin.noot_noot %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: penguin_path(@conn, :show, penguin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: penguin_path(@conn, :edit, penguin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: penguin_path(@conn, :delete, penguin), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Penguin", to: penguin_path(@conn, :new) %></span>

@@ -1,0 +1,23 @@
+<h2>Show Penguin</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @penguin.name %>
+  </li>
+
+  <li>
+    <strong>Species:</strong>
+    <%= @penguin.species %>
+  </li>
+
+  <li>
+    <strong>Noot noot:</strong>
+    <%= @penguin.noot_noot %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: penguin_path(@conn, :edit, @penguin) %></span>
+<span><%= link "Back", to: penguin_path(@conn, :index) %></span>

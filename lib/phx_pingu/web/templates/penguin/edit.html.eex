@@ -1,0 +1,6 @@
+<h2>Edit Penguin</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: penguin_path(@conn, :update, @penguin) %>
+
+<span><%= link "Back", to: penguin_path(@conn, :index) %></span>
